@@ -1,7 +1,7 @@
 ---
 title: "Título del manuscrito (informativo, no \"Práctica X\")"
 author:
-  - "Nombre Apellido (Matrícula XXXXX)"
+  - "Angélica Alcántara (Matrícula XXXXX)"
   - "Nombre Apellido (Matrícula XXXXX) [si aplica]"
 course: "Biogeografía (GEO-131)"
 practice: "Práctica: Técnicas de ecología numérica con *datasets* de R"
