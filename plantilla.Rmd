@@ -1,11 +1,12 @@
 ---
-title: "¿Siguen vigentes los clasicos? Una revision critica de los modelos clasicos"
+title: "¿Siguen vigentes los clásicos? Una revision crítica de los modelos clásicos"
 author:
-  - "Angélica Maria Alcántara Ogando (Matrícula FI3276)"
+  - "Angélica María Alcántara Ogando (Matrícula FI3276)"
 course: "Geomorfologia (GEO-114)" 
 date: "`r format(Sys.Date(), '%Y-%m-%d')`"
 output:
   bookdown::pdf_document2:
+    latex_engine: xelatex
     toc: true
     toc_depth: 3
     number_sections: false
@@ -42,14 +43,30 @@ invisible(sapply(names(has_pkg)[has_pkg], library, character.only = TRUE))
 ```
 
 
-# Resumen (Abstract)
+> # Resumen
+> 
+> La presente investigación realiza una revisión crítica de los modelos geomorfológicos de William Morris Davis y Walther Penck para analizar la transición epistemológica hacia la geomorfología de procesos contemporánea. A través de un diseño cualitativo y documental, el estudio identifica que, si bien los modelos clásicos proporcionaron una base narrativa fundamental para la disciplina, sus premisas de estabilidad cortical prolongada y sistemas cerrados contradicen principios geofísicos modernos como la isostasia y la tectónica de placas. Los resultados indican que el "Ciclo Geográfico" persiste en los libros de texto de introducción como un "andamiaje cognitivo" didáctico y no por su precisión científica. Se concluye que la enseñanza de las geociencias debe evolucionar hacia la integración de modelos de evolución del paisaje (LEM) y sistemas abiertos para cerrar la brecha entre la docencia universitaria y la investigación de frontera actual.
+> 
+> **Palabras clave:** *Geomorfología; Ciclo Geográfico; Davis; Penck; Evolución del Relieve; Sistemas Abiertos.*
+
+---
+
+> # Abstract
+> 
+> This research performs a critical review of the geomorphic models of William Morris Davis and Walther Penck to analyze the epistemological transition toward contemporary process geomorphology. Using a qualitative and documentary design, the study identifies that while classical models provided a fundamental narrative basis for the discipline, their premises of prolonged crustal stability and closed systems contradict modern geophysical principles such as isostasy and plate tectonics. The results indicate that the "Geographical Cycle" persists in introductory textbooks as a didactic "pedagogical scaffolding" rather than for its scientific accuracy. The study concludes that geosciences education must evolve toward the integration of landscape evolution models (LEM) and open systems to bridge the gap between undergraduate teaching and current frontier research.
+> 
+> **Keywords:** *Geomorphology; Geographical Cycle; Davis; Penck; Landscape Evolution; Open Systems.*
 
 
 **Palabras clave:** Geomorfología; Ciclo Geográfico; Davis; Penck; Evolución del Relieve.
 
 # 1. Introducción
 
-La geomorfología ha experimentado una transformación rotunda en su marco conceptual al evolucionar desde una disciplina principalmente histórica hacia una ciencia de procesos. La geomorfología histórica, fundamentada en el análisis cronológico y descriptivo del relieve [@davis1973geographical], dio paso a la geomorfología de procesos o sistémica, la cual estudia las interacciones fisicoquímicas que modelan la superficie terrestre a través de flujos de energía y materia, priorizando el análisis de sistemas abiertos en condiciones de equilibrio dinámico [@chorley1971physical; @strahler1950equilibrium] frente a la simple narrativa evolutiva del pasado. A pesar de este giro, persiste una notable desconexión entre la investigación de frontera y la enseñanza de las geociencias, ya que libros de texto fundamentales, como el influyente manual de Tarbuck y Lutgens [@lutgens2016foundations], continúan utilizando el "Ciclo Geográfico" de William Morris Davis como eje pedagógico, postulando que el relieve atraviesa una secuencia lineal de estadios —juventud, madurez y senectud— tras un levantamiento tectónico rápido [@davis1973geographical; @chorley2009history].
+La geomorfología ha experimentado una transformación rotunda en su marco conceptual al evolucionar desde una disciplina principalmente histórica hacia una ciencia de procesos. La geomorfología histórica, fundamentada en el análisis cronológico y descriptivo del relieve [@davis1973geographical], dio paso a la geomorfología de procesos o sistémica, la cual estudia las interacciones fisicoquímicas que modelan la superficie terrestre a través de flujos de energía y materia, priorizando el análisis de sistemas abiertos en condiciones de equilibrio dinámico [@chorley1971physical; @strahler1950equilibrium] frente a la simple narrativa evolutiva del pasado. A pesar de este giro, persiste una notable desconexión entre la investigación de frontera y la enseñanza de las geociencias, ya que libros de texto fundamentales, como el influyente manual de Tarbuck y Lutgens [@lutgens2016foundations], continúan utilizando el "Ciclo Geográfico" de William Morris Davis como eje pedagógico, postulando que el relieve atraviesa una secuencia lineal de estadios —juventud, madurez y senectud— (Figura \@ref(fig:ciclo-davis))tras un levantamiento tectónico rápido [@davis1973geographical; @chorley2009history].
+
+```{r ciclo-davis, fig.cap="Ciclo de Davis: juventud, madurez y vejez", out.width="50%", fig.align="center", echo=FALSE}
+knitr::include_graphics("ciclo-davis.jpeg")
+```
 
 La persistencia de estos esquemas resulta paradójica, dado que sus premisas de estabilidad cortical prolongada contradicen los principios modernos de la isostasia y la tectónica de placas, los cuales demuestran que el levantamiento y la erosión operan como procesos simultáneos y concurrentes [@article]. La vigencia de los esquemas tradicionales en el currículo académico plantea una paradoja epistemológica fundamental: ¿por qué los modelos clásicos de evolución del relieve continúan como el pilar de la enseñanza geomorfológica a pesar de las severas objeciones que los rodean? Esta cuestión invita a considerar si ciertos componentes de la herencia davisiana, tales como su nomenclatura de estadios evolutivos, conservan todavía una utilidad descriptiva dentro de la narrativa del paisaje contemporáneo [@luo2024reincarnation]. Asimismo, surgen interrogantes sobre las contradicciones inherentes al modelo de Penck y la validez teórica de sus tesis sobre el *Piedmonttreppen* ante los avances de la geodinámica [@cleverson2024revisiting], pues el núcleo del debate reside en las fallas metodológicas y los supuestos tectónicos erróneos —específicamente la premisa de la estabilidad cortical— que precipitaron el declive de estas teorías en la investigación profesional [@orme2007rise].
 
@@ -72,9 +89,13 @@ Finalmente, el análisis evalúa la dimensión pedagógica de estos modelos obso
 
 ## 3.1. Discrepancias Estructurales entre Modelos Clásicos
 
-Tras la revisión crítica de las fuentes primarias, la investigación identifica que la principal divergencia entre los modelos de Davis [@davis1973geographical] y Penck [@penck1924] radica en la temporalidad de la tectónica y la resultante evolución de las vertientes. Mientras que Davis postula un sistema cerrado con un levantamiento inicial rápido seguido de una quietud cortical prolongada, el análisis de Penck revela un sistema dinámico donde la erosión y el levantamiento operan como procesos concurrentes. Esta diferencia produce morfologías opuestas: el modelo davisiano genera un "suavizamiento de pendientes" (*slope decline*) hasta alcanzar la peneplanicie, mientras que el modelo de Penck desarrolla un "retroceso paralelo" (*slope retreat*) que da lugar a plataformas escalonadas o *Piedmonttreppen*. La Tabla 1 \@ref(tab:comparativa-modelos) sintetiza los supuestos críticos que fundamentan estas distinciones.
+Tras la revisión crítica de las fuentes primarias, la investigación identifica que la principal divergencia entre los modelos de Davis [@davis1973geographical] y Penck [@penck1924] (Ver Figura \@ref(fig:fig-penck)) radica en la temporalidad de la tectónica y la resultante evolución de las vertientes. Mientras que Davis postula un sistema cerrado con un levantamiento inicial rápido seguido de una quietud cortical prolongada, el análisis de Penck revela un sistema dinámico donde la erosión y el levantamiento operan como procesos concurrentes. Esta diferencia produce morfologías opuestas: el modelo davisiano genera un "suavizamiento de pendientes" (*slope decline*) hasta alcanzar la peneplanicie, mientras que el modelo de Penck desarrolla un "retroceso paralelo" (*slope retreat*) que da lugar a plataformas escalonadas o *Piedmonttreppen*. La Tabla 1 \@ref(tab:comparativa-modelos) sintetiza los supuestos críticos que fundamentan estas distinciones.
 
-**Tabla 1.(\#tab:comparativa-modelos) Comparación de los supuestos críticos entre los modelos de Davis y Penck.
+```{r fig-penck, fig.cap="Modelo de evolución de vertientes de Walther Penck.", out.width="50%", fig.align="center", fig.pos="H", echo=FALSE}
+knitr::include_graphics("penck.jpeg")
+```
+
+**Tabla 1. (\#tab:comparativa-modelos) Comparación de los supuestos críticos entre los modelos de Davis y Penck.
 
 | Criterio | Modelo de Davis | Modelo de Penck |
 | :--- | :--- | :--- |
@@ -97,161 +118,36 @@ Al contrastar estos modelos clásicos con los manuales contemporáneos [@lutgens
 El análisis del manual de Lutgens, Tarbuck y Tasa [@lutgens2016foundations] confirma la persistencia del modelo davisiano en la pedagogía actual de las geociencias. Aunque el texto reconoce los avances en la dinámica terrestre, mantiene la terminología de "juventud, madurez y vejez" como eje vertebrador en la descripción de la evolución del relieve fluvial. Los resultados indican que la literatura educativa retiene este modelo por su estructura narrativa simplificada y no por su precisión geofísica, estableciendo una dicotomía entre el rigor científico y la accesibilidad didáctica [@luo2024reincarnation].
 
 
+# 4. Discusión
 
+La presente revisión crítica cumple satisfactoriamente el objetivo de analizar la transición epistemológica entre la geomorfología histórica y la de procesos. El contraste entre los postulados de Davis y Penck permite identificar que el desplazamiento desde sistemas cerrados hacia sistemas abiertos no fue solo un cambio de nomenclatura, sino una reconfiguración de la filosofía de las ciencias terrestres. Mientras el modelo davisiano se apoyaba en una visión teleológica donde el paisaje "envejecía" hacia un fin determinado, la geomorfología moderna, influenciada por autores como Chorley y Strahler, redefine el relieve como una manifestación de flujos constantes de energía y materia [@chorley1971physical; @strahler1950equilibrium]. (Ver. Figura\@ref(fig:fig-dif-termodin)
 
-## 2.1. Antecedentes y Estado del Arte: De la Narrativa al Proceso
-
-La geomorfología, como disciplina científica, experimentó su primera gran sistematización a finales del siglo XIX con la propuesta del Ciclo Geográfico de William Morris Davis [@davis1973geographical]. Durante décadas, este modelo descriptivo dominó la disciplina, ofreciendo una visión de la Tierra donde el paisaje evolucionaba de forma predecible a través de estadios de juventud, madurez y vejez [@lutgens2016foundations]. En esta etapa, la geomorfología era fundamentalmente histórica y cualitativa.
-
-Sin embargo, a mediados del siglo XX, surgieron críticas lideradas por la escuela alemana de Walther Penck [@7cb93337-d3d8-35b9-a0d0-62c1b0500514] y, posteriormente, por la Revolución Cuantitativa de Arthur Strahler [@strahler1950equilibrium]. Estos autores cuestionaron el "estatismo" de Davis, argumentando que el relieve no es un sistema cerrado cuya energía se agota con el pasar del tiempo, sino un sistema abierto que responde constantemente a la tectónica y al clima [@cleverson2024revisiting]. A pesar de que las investigaciones se desplazaron hacia el uso de modelos matemáticos y la geocronología, el interés por los modelos clásicos no ha desaparecido.
-
-Como señala @luo2024reincarnation, las teorías de Davis han experimentado una "reencarnación" en el siglo XXI. Este nuevo interés no busca validar sus errores tectónicos, sino rescatar su valor como lenguaje común y herramienta pedagógica [@walsh2026pedagogical]. Por lo tanto, el debate entre "clásicos" y "modernos" no debe considerarse un capítulo terminado, sino una discusión necesaria para entender cómo la simplificación didáctica presente en textos base como el de @lutgens2016foundations convive con la complejidad de la investigación contemporánea [@orme2007rise].
-
----
-
-## 2.2. Bases Teóricas: Los Modelos de Evolución del Relieve
-
-### 2.2.1. El Ciclo Geográfico de W.M. Davis
-
-El modelo davisiano se fundamenta en la premisa de que el paisaje es una función de la estructura, el proceso y el tiempo [@davis1973geographical]. El postulado central asume un levantamiento tectónico rápido e inicial de una masa de tierra, seguido de un prolongado periodo de estabilidad cortical donde la erosión actúa sin interrupciones tectónicas [@lutgens2016foundations].
-
-Davis dividió esta evolución en estadios cronológicos, como se puede ver en la 
-
-
-
-
-Figura \@ref(fig:ciclo-davis):
-
-```{r ciclo-davis, fig.cap="Ciclo de Davis: juventud, madurez y vejez", out.width="50%", fig.align="center", echo=FALSE}
-knitr::include_graphics("ciclo-davis.jpeg")
-```
-
-* **Juventud:** Caracterizada por valles estrechos en forma de "V" y una alta energía fluvial.
-* **Madurez:** Donde el relieve alcanza su máxima diferenciación y los valles se ensanchan.
-* **Vejez:** El estadio final donde la superficie se reduce a una *peneplanicie*, una llanura casi sin rasgos situada cerca del nivel de base [@orme2007rise]. 
-
-### 2.2.2. El Análisis Morfológico de Walther Penck
-
-Penck rechazó la idea de un levantamiento instantáneo, proponiendo que la erosión y la tectónica son procesos concurrentes. Su análisis se centra en la relación entre la intensidad del levantamiento y la tasa de degradación fluvial [@7cb93337-d3d8-35b9-a0d0-62c1b0500514].
-
-A diferencia del "suavizamiento" de Davis, Penck introdujo el concepto de retroceso paralelo de las vertientes (*slope replacement*). Como se puede observar en la Figura \@ref(fig:fig-penck),  en este modelo, las pendientes escarpadas mantienen su ángulo mientras retroceden, siendo reemplazadas en la base por pendientes más suaves [@cleverson2024revisiting]. Este proceso da lugar al *Piedmonttreppen* o "escalinata de piedemonte", una serie de plataformas escalonadas que Penck interpretaba como evidencia de pulsos tectónicos de intensidad creciente [@7cb93337-d3d8-35b9-a0d0-62c1b0500514].
-
-```{r fig-penck, fig.cap="Modelo de evolución de vertientes de Walther Penck. Imagen generada mediante NotebookLM (2024).", out.width="50%", fig.align="center", fig.pos="H", echo=FALSE}
-knitr::include_graphics("penck.jpeg")
-```
-
-### 2.2.3. Mecanismos Comparados
-
-Para sintetizar las diferencias fundamentales entre ambos enfoques, se presenta la Tabla \@ref(tab:comparativa-modelos), la cual resume los supuestos críticos de cada autor:
-
-Table: (\#tab:comparativa-modelos) Comparación de los supuestos críticos entre los modelos de Davis y Penck. Generado mediante NotebookLM.
-
-| Criterio | Modelo de Davis | Modelo de Penck |
-| :--- | :--- | :--- |
-| **Tectónica** | Levantamiento rápido e inicial. | Levantamiento y erosión simultáneos. |
-| **Clima** | Templado/Húmedo (principalmente). | Factor secundario a la tectónica. |
-| **Tiempo** | Factor lineal y determinante (estadios). | Irrelevante; prima la tasa de proceso. |
-| **Laderas** | Descenso de pendiente (*Slope Decline*). | Retroceso de pendiente (*Slope Retreat*). |
-| **Formas Finales** | Peneplanicie. | *Endrumpf* / *Piedmonttreppen*. |
----
-
-## 2.3. Definición de Conceptos Clave
-
-Para garantizar la precisión en la revisión crítica de los modelos, es imperativo establecer las definiciones técnicas de los conceptos que articulan la transición de la geomorfología histórica a la de procesos.
-
-### 2.3.1. Peneplanicie (*Peneplain*)
-
-Concepto central del modelo davisiano que describe el estadio final de la degradación continental. Se define como:
-
-> "Una superficie de erosión de gran extensión que presenta un relieve ondulado muy suave, situada cerca del nivel de base, y que representa el límite teórico de la denudación tras un largo periodo de estabilidad tectónica" [@davis1973geographical; en @lutgens2016foundations].
-
-### 2.3.2. *Piedmonttreppen* (Escalinata de Piedemonte)
-
-Concepto introducido por la escuela alemana para explicar paisajes escalonados en áreas de levantamiento activo:
-
-> "Una sucesión de llanuras de erosión dispuestas en forma de niveles o escalones en los flancos de una masa montañosa, interpretadas como el resultado de un levantamiento tectónico cuya velocidad aumenta de forma rítmica o acelerada" [@7cb93337-d3d8-35b9-a0d0-62c1b0500514].
-
-### 2.3.3. Equilibrio Dinámico (*Dynamic Equilibrium*)
-
-Postulado fundamental de la geomorfología de procesos que reemplaza la idea de "estadios":
-
-> "Una condición en la que las formas del relieve y los procesos que las modelan alcanzan un estado de ajuste mutuo, donde la morfología del paisaje permanece constante en el tiempo porque la energía de entrada (levantamiento) se equilibra exactamente con la energía de salida (erosión)" [@strahler1950equilibrium].
-
-### 2.3.4. Isostasia (*Isostasy*)
-
-Concepto geofísico que Davis ignoró en su modelo original, pero que es vital para explicar por qué las montañas no desaparecen tan rápido como él predecía:
-
-> "El estado de equilibrio gravitacional entre la litosfera y la astenosfera, de tal manera que las placas tectónicas 'flotan' a una altura que depende de su espesor y densidad; cuando la erosión retira masa de una montaña, la isostasia provoca un levantamiento compensatorio de la raíz" [@lutgens2016foundations].
-
-### 2.3.5. Nivel de Base (Base Level)
-Concepto que actúa como el límite teórico de la erosión davisiana:
-
->“Se define como el límite inferior de la erosión del relieve, representado generalmente por el nivel del mar. Es el plano hacia el cual tienden todas las corrientes de agua y el factor que condiciona la formación de la peneplanicie al limitar la capacidad de profundización de los valles” [@lutgens2016foundations].
-
----
-
-## 2.4. Bases Epistemológicas y Críticas: El Cambio de Paradigma
-
-La transición de la geomorfología clásica a la contemporánea representó una evolución desde la visión de sistemas cerrados hacia los abiertos.
-
-### 2.4.1. Sistemas Cerrados vs. Sistemas Abiertos
-
-El modelo de Davis se fundamenta epistemológicamente en la idea de un sistema cerrado. En este enfoque, el levantamiento inicial dota al relieve de una cantidad finita de energía potencial. A medida que el ciclo progresa hacia la 'vejez', esa energía se disipa mediante la erosión hasta que el sistema alcanza un estado de entropía máxima: la peneplanicie [@orme2007rise]. Como se ilustra en la Figura\@ref(fig:fig-dif-termodin), este proceso implica un agotamiento irreversible del trabajo geomórfico, a diferencia de los modelos de sistemas abiertos donde el flujo de energía es constante."
-
-```{r fig-dif-termodin, fig.cap="Diferencias termodinámicas entre el sistema cerrado davisiano y el sistema abierto contemporáneo (generada con NotebookLM, 2024)", out.width="70%", fig.align="center", echo=FALSE}
+```{r fig-dif-termodin, fig.cap="Diferencias termodinámicas entre el sistema cerrado davisiano y el sistema abierto contemporáneo", out.width="70%", fig.align="center", echo=FALSE}
 knitr::include_graphics("dif-termodin.jpeg")
 ```
 
-Por el contrario, la geomorfología moderna, influenciada por la teoría general de sistemas, define al relieve como un **sistema abierto**. Aquí, el paisaje está en constante intercambio de materia y energía con su entorno (tectónica activa, clima cambiante e isostasia). No existe un "final" predeterminado, sino un estado de equilibrio dinámico donde las formas se ajustan continuamente a las fuerzas externas ([@strahler1950equilibrium; @cleverson2024revisiting]).
+Al profundizar en los resultados, surge una paradoja epistemológica en la persistencia de los modelos clásicos dentro de manuales estándar como el de Lutgens, Tarbuck y Tasa [@lutgens2016foundations]. Esta vigencia no se sustenta en una validez geofísica; las evidencias contemporáneas en geomorfología tectónica demuestran que la isostasia impide la formación de peneplanicies estáticas, ya que la remoción de masa por erosión provoca un levantamiento compensatorio continuo [@article; @orme2007rise]. Sin embargo, la estructura narrativa de Davis ofrece una "ilusión de orden" que resulta pedagógicamente atractiva. Al analizar esta persistencia bajo la lente de Walsh y Vowles [@walsh2026pedagogical], se concluye que estos modelos funcionan como un "andamiaje cognitivo" necesario: una simplificación que, aunque errónea en su física, permite al estudiante visualizar la relación entre agentes erosivos y formas resultantes antes de enfrentarse a la estocástica de los sistemas complejos.
 
-### 2.4.2. El Cambio de Paradigma: De la Narrativa a la Física
+Un punto crítico que amplía este debate es la naturaleza del tiempo. En el ciclo geográfico, el tiempo es un vector lineal y absoluto; en cambio, la introducción de la teoría del equilibrio dinámico de Hack [@Hack1960InterpretationOE] sugiere que el relieve puede alcanzar un "estado estacionario" (*steady state*) donde la forma se mantiene constante mientras los procesos sigan equilibrados, independientemente del tiempo transcurrido. Esta ruptura con la cronología davisiana permitió que la disciplina se centrara en el análisis morfométrico y estadístico de las redes de drenaje [@melton1958correlation]. No obstante, la transición no fue perfecta; la escuela de Penck, a pesar de proponer un modelo más dinámico de levantamiento y erosión concurrentes, también incurrió en interpretaciones tectónicas que hoy resultan cuestionables bajo la geodinámica moderna [@cleverson2024revisiting].
 
-El declive definitivo de los modelos clásicos ocurrió con la *Revolución Cuantitativa*. El punto de ruptura fue marcado por @strahler1950equilibrium, quien criticó la naturaleza puramente deductiva y subjetiva del ciclo geográfico.
-
-Strahler argumentó que la geomorfología debía dejar de ser una "narrativa histórica" basada en estadios imaginarios para convertirse en una ciencia física rigurosa.
-
-> "La geomorfología debe basarse en leyes físicas y análisis cuantitativos, reemplazando la descripción cualitativa de 'juventud' o 'vejez' por el estudio de los procesos dinámicos en equilibrio" [@strahler1950equilibrium].
-
-Este cambio de paradigma hacia la física de procesos dejó a los modelos de Davis y Penck en una posición de obsolescencia para la investigación de frontera. Sin embargo, paradójicamente, su estructura lógica y visual permitió que permanecieran vigentes en un ámbito distinto: la educación superior y la divulgación científica, lo que plantea una dicotomía entre la precisión geofísica y la claridad pedagógica que se explora a continuación.
-
----
-
-## 2.5. Justificación de la Persistencia Pedagógica: El Valor de la Simplificación
-
-La permanencia de los modelos clásicos en la bibliografía contemporánea [@book] no responde a una falta de actualización científica, sino a una estrategia didáctica deliberada.
-
-### 2.5.1. El Modelo de Davis como "Mal Necesario"
-
-Según argumentan @walsh2026pedagogical, la teoría de Davis funciona como un “mal necesario” o un andamiaje cognitivo. El uso de este modelo se justifica por su capacidad para simplificar sistemas multivariables en una narrativa lineal y fácil de asimilar. Según Luo (2024), es más efectivo introducir a un estudiante en la geomorfología mediante estadios antropomórficos (juventud, madurez, vejez) antes de abordar la complejidad no lineal de los sistemas abiertos, siempre que se aclare que el modelo es una abstracción didáctica y no una realidad geofísica absoluta.
-
-
-### 2.5.2. El Valor Didáctico del Contraste
-
-La persistencia de estos modelos permite utilizar el método del contraste. Al presentar el retroceso paralelo de laderas de Penck frente al suavizamiento de Davis [@7cb93337-d3d8-35b9-a0d0-62c1b0500514], se fomenta el pensamiento crítico.
-
----
-
-## 2.6. Síntesis de Definiciones Operativas
-
-Para efectos de esta revisión crítica, se adoptan las siguientes definiciones fundamentales:
-
-* **Retroceso Paralelo de Laderas:** "Proceso erosivo donde la inclinación de la pendiente se mantiene constante mientras la pared del relieve retrocede hacia el centro del bloque tectónico" [@7cb93337-d3d8-35b9-a0d0-62c1b0500514].
-* **Equilibrio Dinámico:** "Condición en la que las formas del relieve se ajustan para permitir el transporte de sedimentos con la máxima eficiencia, manteniendo una morfología estable a pesar del cambio continuo en el flujo de energía y materia" [@strahler1950equilibrium].
-* **Sistema Abierto: “Estado de organización del relieve donde existe un flujo continuo de energía y materia. A diferencia del sistema cerrado de Davis, un sistema abierto no tiene un final predeterminado (entropía), sino que mantiene su forma a través de ajustes constantes entre el levantamiento tectónico y la denudación” [@strahler1950equilibrium]
-
-
-## 2.3. Definición de Conceptos Clave (Glosario Técnico)
-* **Peneplanicie:** Definición según Davis (1899).
-* **Equilibrio Dinámico:** Definición según Strahler (1950).
-* **Isostasia:** Definición según Tarbuck & Lutgens (2005).
-
-# 3. Discusión: El Cambio de Paradigma (Subpregunta 3)
+Finalmente, la "reencarnación" de estos ciclos en la geografía introductoria [@luo2024reincarnation] revela una tensión entre el rigor científico y la comunicación del conocimiento. La investigación profesional ha adoptado un enfoque sistémico donde el paisaje es un producto de umbrales y retroalimentaciones, pero este lenguaje técnico suele ser inaccesible para el nivel de grado. Por lo tanto, el uso de la terminología de Davis y Penck debe ser resignificado en el currículo: no como verdades científicas, sino como hitos históricos que ilustran cómo la disciplina evolucionó de una "narrativa descriptiva" a una "ciencia física de procesos" [@barroso2013geomorphology; @chorley2009history].
 
 
 
+# 5. Limitaciones y Futuras Líneas de Investigación
 
-# 4. Conclusiones
+A pesar del cumplimiento de los objetivos, este estudio presenta limitaciones inherentes a su naturaleza de revisión documental y epistemológica. Al centrarse primordialmente en manuales de amplia circulación y textos anglosajones y europeos, la investigación podría estar omitiendo currículos regionales o textos de geografía física menos estandarizados que presenten una transición más temprana o alternativa hacia la geomorfología de procesos [@barroso2013geomorphology]. Asimismo, al ser un análisis cualitativo, carece de una validación empírica mediante el uso de Sistemas de Información Geográfica (SIG) que permita contrastar si los paisajes reales se ajustan más a la degradación davisiana o al retroceso de Penck en contextos tectónicos específicos [@article].
+
+Para investigaciones futuras, se sugiere trascender el análisis de textos y realizar estudios de campo o experimentales que apliquen análisis morfométricos estructurales [@melton1958correlation] para evaluar la vigencia de estos modelos en orógenos activos. Es imperativo, además, investigar la integración de modelos computacionales de evolución del paisaje (LEM) como herramientas didácticas. Estos modelos podrían sustituir los diagramas estáticos de Davis, ofreciendo la misma claridad visual pero bajo el rigor geofísico de la geomorfología de procesos contemporánea, resolviendo así la dicotomía entre facilidad de enseñanza y precisión científica.
 
 
+# 6. Conclusiones
 
-# Referencias Bibliográficas
+La presente investigación demuestra que la transición de la geomorfología histórica a la de procesos representa uno de los cambios de paradigma más profundos en las geociencias. El análisis evidencia que, mientras los modelos de Davis [@davis1973geographical] y Penck [@penck1924] fundamentaron la disciplina sobre una base narrativa y cronológica, la geomorfología contemporánea redefine el relieve como un sistema físico regido por leyes termodinámicas y equilibrios dinámicos [@strahler1950equilibrium; @chorley1971physical]. Este estudio confirma que la disciplina ha abandonado la búsqueda de estadios evolutivos lineales para centrarse en la cuantificación de flujos de energía y materia, validando la superioridad científica de los modelos de sistemas abiertos frente a los esquemas cerrados decimonónicos que ignoraban la complejidad de la resistencia de materiales y la variabilidad climática [@melton1958correlation].
+
+El trabajo concluye que la persistencia del modelo davisiano en textos fundamentales, como el manual de Lutgens, Tarbuck y Tasa [@lutgens2016foundations], no responde a su precisión geofísica, sino a su eficacia como herramienta pedagógica. Los resultados sugieren que los educadores mantienen la terminología de "juventud, madurez y vejez" porque ofrece un andamiaje cognitivo que facilita la comprensión inicial de la complejidad del paisaje [@walsh2026pedagogical]. Sin embargo, esta práctica genera una brecha epistemológica persistente [@luo2024reincarnation], ya que perpetúa conceptos que contradicen principios geodinámicos esenciales como la isostasia y la tectónica de placas, omitiendo que el levantamiento y la erosión son procesos concurrentes y no secuenciales [@article; @orme2007rise].
+
+Finalmente, el estudio sostiene que la academia debe modernizar la enseñanza de la geomorfología mediante la integración de modelos computacionales de evolución del paisaje (LEM) y un enfoque en la geomorfología tectónica moderna [@article]. La investigación propone que estas herramientas tecnológicas pueden sustituir la narrativa estática de los ciclos de erosión por una comprensión dinámica y físicamente rigurosa. En última instancia, la ciencia debe presentar los modelos de Davis y Penck como hitos cruciales en la historia del pensamiento geográfico [@chorley2009history] y no como explicaciones vigentes de la dinámica terrestre. Solo mediante esta recontextualización histórica se podrá asegurar que la educación de las nuevas generaciones de geocientíficos se alinee con los estándares de la investigación de frontera y la realidad sistémica del planeta.
+
+
+# 7. Referencias Bibliográficas
