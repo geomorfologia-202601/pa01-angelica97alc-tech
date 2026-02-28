@@ -1,0 +1,34 @@
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H]
+
+{\centering \includegraphics[width=0.5\linewidth]{ciclo-davis}
+
+}
+
+\caption{Ciclo de Davis: juventud, madurez y vejez}\label{fig:ciclo-davis}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+[H]
+
+{\centering \includegraphics[width=0.5\linewidth]{penck}
+
+}
+
+\caption{Modelo de evolución de vertientes de Walther Penck.}\label{fig:fig-penck}
+\end{figure*}
+\efloatseparator
+ 
+\begin{figure*}[hbt]
+\ifnextchar[{\eatarg}{}
+
+
+{\centering \includegraphics[width=0.7\linewidth]{dif-termodin}
+
+}
+
+\caption{Diferencias termodinámicas entre el sistema cerrado davisiano y el sistema abierto contemporáneo}\label{fig:fig-dif-termodin}
+\end{figure*}
