@@ -1,0 +1,98 @@
+---
+title: "Biogeografía y evolución de la flora endémica de alta montaña en la Cordillera Central"
+author:
+  - "Angélica María Alcántara Ogando, Rosanny Rodriguez, Loriel Ramirez Sanchez, Juan Damian de la Rosa, Dahiana Lebron soler, Darlys Espinosa"
+course: "Biologia Evolutiva (------)" 
+date: "`r format(Sys.Date(), '%Y-%m-%d')`"
+output:
+  bookdown::pdf_document2:
+    latex_engine: xelatex
+    toc: true
+    toc_depth: 3
+    number_sections: false
+    fig_caption: yes
+    extra_dependencies: ["float"]
+always_allow_html: true
+bibliography: Referencias2.bib
+csl: apa-es.csl
+lang: es-ES
+header-includes:
+  - \usepackage{caption}
+  - \captionsetup[figure]{font=small}
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE,
+  comment = "#>",
+  fig.width = 7,
+  fig.height = 5,
+  out.width = "100%"
+)
+set.seed(123)
+
+# Paquetes (ajusta según el ejercicio elegido)
+pkg_needed <- c("vegan", "cluster", "indicspecies", "adespatial",
+                "iNEXT", "SpadeR", "ggplot2", "dplyr", "tidyr", "readr")
+has_pkg <- sapply(pkg_needed, requireNamespace, quietly = TRUE)
+if (!all(has_pkg)) {
+  message("Paquetes no críticos ausentes (se omitirán bloques opcionales): ",
+          paste(names(has_pkg)[!has_pkg], collapse = ", "))
+}
+invisible(sapply(names(has_pkg)[has_pkg], library, character.only = TRUE))
+```
+
+
+> # Resumen
+> 
+> La presente investigación realiza una revisión crítica de .....
+> 
+> **Palabras clave:** *Geomorfología; Ciclo Geográfico; Davis; Penck; Evolución del Relieve; Sistemas Abiertos.*
+
+---
+
+> # Abstract
+> 
+> This research performs a critical review of .......
+> 
+> **Keywords:** *Geomorphology; Geographical Cycle; Davis; Penck; Landscape Evolution; Open Systems.*
+
+
+**Palabras clave:** Geomorfología; Ciclo Geográfico; Davis; Penck; Evolución del Relieve.
+
+# 1. Introducción
+
+Los sistemas de alta montaña en las regiones tropicales representan laboratorios evolutivos excepcionales, caracterizados por una marcada compresión de gradientes climáticos y un drástico aislamiento topográfico que altera significativamente los patrones de distribución de la biodiversidad. En el ámbito insular del Caribe, la Cordillera Central de la isla de La Española constituye el eje orográfico más antiguo, masivo y elevado del archipiélago de las Antillas, albergando cumbres ígneas y metamórficas del Cretácico que superan los 3,000 metros de altitud, como el macizo del Pico Duarte y el altiplano de Valle Nuevo. Desde una perspectiva biogeográfica, estas cimas funcionan de manera efectiva como "islas dentro de islas" o "islas de cielo" (sky islands), donde los ecosistemas de tierras altas quedan segregados ecológicamente de la matriz tropical circundante [@stubbs2020floras]. Esta discontinuidad territorial y ambiental ha condicionado históricamente la estructura fitosociológica de la vegetación, dando lugar a una zonificación altitudinal bien diferenciada y a intrincadas catenas vegetales que se distribuyen a lo largo de los pisos bioclimáticos del Área Biogeográfica Centro-Oriental o Área A16 [@cano2017catena], lo que despierta un profundo interés científico debido a sus excepcionales niveles de endemismo y a los complejos mecanismos de adaptación que exhiben sus taxones.
+
+La trascendencia evolutiva de esta flora de alta montaña se manifiesta con claridad en especies arbóreas emblemáticas como el pino criollo o pino de cuaba (Pinus occidentalis), un elemento estructurador del paisaje forestal perteneciente a la sección Trifoliae (subsección Australes) que sostiene comunidades de coníferas con adaptaciones morfológicas y reproductivas extremas frente a variaciones térmicas drásticas y regímenes de fuego recurrentes [@farjon2010pinus; @cano2011phytosociological]. Al mismo tiempo, taxones altamente especializados de las cumbres, como la planta carnívora endémica Pinguicula casabitoana o las comunidades herbáceas y no vasculares de la Sabana de Pajón en Valle Nuevo, evidencian procesos de radiación adaptativa y especiación impulsados por el aislamiento genético prolongado y la persistente presión de la selección natural en suelos oligotróficos y ácidos [@garcia2002flora; @jardinbotanico2021sabana]. Esta configuración biogeográfica contemporánea es el resultado directo de dinámicas paleoclimáticas complejas, donde las oscilaciones y glaciaciones locales del Pleistoceno tardío deprimieron la línea de nieve permanente hasta los 2,200 metros de altitud, transformando las cumbres de la Cordillera Central en refugios críticos que aceleraron el aislamiento y la divergencia evolutiva tras el retroceso de los hielos en el Holoceno [@orvis1997geomorphic; @schubert1982glaciacion].
+
+Tomando en consideración este complejo marco conceptual y fitogeográfico, el objetivo de esta investigación es analizar de manera sistemática la dinámica biogeográfica y los procesos evolutivos que han determinado el origen, la distribución y la conservación de la flora endémica de alta montaña en la Cordillera Central de La Española. Mediante una revisión rigurosa de los aportes fitosociológicos, ecológicos y geomorfológicos disponibles en la literatura científica, se pretende caracterizar los principales mecanismos de aislamiento, especiación alopátrica y adaptación eco-fisiológica que sostienen la biodiversidad en estos enclaves montañosos primordiales. Asimismo, este estudio se propone evaluar el estado actual de vulnerabilidad de dichas comunidades vegetales frente a las perturbaciones bióticas contemporáneas y los escenarios de cambio climático global, aportando una base teórica sólida que fundamente la urgencia de su protección, conectividad altitudinal y manejo adaptativo [@andrade2005gestion].
+
+
+# 2. Materiales y Métodos
+
+El presente estudio desarrolla un enfoque cualitativo de carácter biogeográfico y documental mediante un diseño de revisión crítica que va más allá de la simple descripción bibliográfica, con el propósito de evaluar la validez de los modelos fitosociológicos y la evolución de los paradigmas macroevolutivos aplicados a los ecosistemas insulares. La investigación centra su atención en el contraste dialéctico entre las teorías biogeográficas tradicionales de la estabilidad comunitaria y los enfoques contemporáneos de la ecología de procesos basados en sistemas dinámicos abiertos y metapoblaciones en entornos de "islas de cielo" (sky islands) [@stubbs2020floras]. Para ello, se integra una selección de fuentes que abarca obras taxonómicas y florísticas fundacionales de la alta montaña dominicana para extraer los postulados y asociaciones fitocenológicas originales [@garcia2002flora; @cano2011phytosociological], manuales técnicos y reportes institucionales que fungen como referentes de la gestión ecológica estatal [@jaragua2012valle; @propagas2020guia], y artículos de frontera sobre filogeografía, marcadores moleculares y geodinámica cuaternaria que validan las inconsistencias de los modelos tradicionales frente a la investigación biológica y de conservación del siglo XXI [@orvis1997geomorphic; @soh2024pino].
+
+La estrategia de búsqueda y recolección de información se estructuró de forma cronológica y temática para delimitar claramente la brecha entre los registros botánicos descriptivos y los análisis evolutivos multitemporales modernos. Se realizó una búsqueda sistemática en motores especializados de alto impacto y Google Scholar, empleando términos de búsqueda técnicos en inglés y español como "Pinus occidentalis", "Pinguicula casabitoana", "Biogeography", "Island biogeography theory", "High-mountain flora", "Pleistocene glaciations" y "Equilibrium theory" junto a los apellidos de investigadores clave del área de las geociences y la botánica sistemática antillana [@schubert1982glaciacion; @cano2010biogeography]. La delimitación temporal implementada permitió fragmentar el corpus analítico en dos bloques específicos: fuentes primarias e inventarios florísticos de referencia (2002-2012) para el análisis del establecimiento de alianzas fitosociológicas como Rondeletio ochraceae-Didymopanion tremuli [@garcia2002flora; @cano2016humid], y fuentes críticas y monitoreos fitosanitarios contemporáneos (2015-2026) para evaluar la vigencia, vulnerabilidad y estado de conservación real de dichos taxones ante las perturbaciones antropogénicas actuales [@perez2015entomofauna; @carnifans2025pinguicula].
+
+El análisis metodológico se basa en una triangulación teórica y conceptual que permite hacer converger diversas perspectivas científicas, climáticas y metodológicas. En la primera etapa, se contrastan los patrones de zonificación altitudinal y catenas de vegetación con los datos de estructura, haplotipos cloroplásticos y diversidad genética poblacional ($H_E = 0.90; F_{ST} = 0.123$) reportados para las coníferas endémicas de la isla [@cano2017catena; @soh2024pino]. Posteriormente, estas variables biológicas se evalúan y correlacionan bajo los principios de la termodinámica de sistemas abiertos, la eco-fisiología vegetal y los índices bioclimáticos cuantitativos obtenidos en las estaciones meteorológicas de montaña, tales como el índice ombrotérmico hiperhúmedo ($Io = 19.7$) y el índice de termicidad supratropical ($Itc = 187$) [@cano2011phytosociological; @jardinbotanico2021sabana]. Este enfoque integrado permite identificar los fallos ecológicos derivados de premisas basadas en un clima estático y desglosar cómo las oscilaciones geomorfológicas y térmicas del Último Máximo Glacial transformaron por completo la interpretación de la distribución y los refugios de la biodiversidad en La Española [@orvis1997geomorphic].Finalmente, el análisis evalúa la dimensión pedagógica y las perspectivas de manejo adaptativo de estos modelos, determinando su función como "andamiaje cognitivo" (pedagogical scaffolding) en los programas de enseñanza de las ciencias naturales y la biología evolutiva a nivel superior. Se examina si el mantenimiento de la nomenclatura y las clasificaciones florísticas clásicas responde a una necesidad didáctica para facilitar el aprendizaje inicial de los pisos vegetacionales de la Cordillera Central o si representa un rezago epistemológico que distorsiona la comprensión de las dinámicas ecológicas activas y las amenazas contemporáneas, como los brotes epidémicos de Dendroctonus frontalis inoculados con Ophiostoma minus [@ncforest2020southern]. Esta fase final sintetiza de manera crítica la relación entre la investigación profesional de frontera y la transposición didáctica en el aula, utilizando la historia de la fitogeografía caribeña para comprender por qué ciertas estructuras teóricas persisten en el currículo a pesar de haber sido superadas por el enfoque sistémico y de procesos de la ecología de la conservación actual [@andrade2005gestion; @lebron2023diversidad].
+
+# 3. Desarrollo
+
+La caracterización botánica de la alta montaña en la Cordillera Central de La Española devela una intrincada ordenación fitosociológica donde el pino criollo o pino de cuaba (Pinus occidentalis) actúa como la especie arbórea dominante y el elemento de ingeniería ecosistémica que estructura el paisaje forestal. Taxonómicamente, esta conífera endémica se sitúa filogenéticamente de manera cercana con Pinus cubensis (la especie endémica del oriente de Cuba), compartiendo características morfológicas singulares en sus conos y acículas, aunque se define ecológicamente como un especialista edáfico capaz de colonizar los suelos silíceos, marcadamente ácidos, poco profundos y deficientes en nutrientes esenciales de las mayores altitudes caribeñas [@cano2011phytosociological; @farjon2010pinus]. La distribución geográfica de estas comunidades vegetales está rigurosamente condicionada por un gradiente bioclimático y altitudinal que restringe su óptimo desarrollo por encima de los 2,000 metros sobre el nivel del mar, quedando confinada a enclaves primordiales del Área Biogeográfica Centro-Oriental o Área A16, tales como el macizo del Pico Duarte y los altiplanos del Parque Nacional Valle Nuevo [@cano2010biogeography; @cano2017catena; @drluxury2025pico]. En estas cumbres supratropicales, sujetas a drásticas heladas invernales, la exclusión de la mayoría de las latifoliadas permite que el dosel sea dominado únicamente por el pino, abriendo paso en las depresiones intermontanas inundables a las sabanas de pajón —dominadas por las gramíneas Danthonia domingensis y Deschampsia domingensis junto a musgos del género Sphagnum—, mientras que en las laderas húmedas de barlovento, sometidas a neblinas constantes y adscritas a alianzas como Rondeletio ochraceae-Didymopanion tremuli, se asienta el bosque nublado donde coexisten el ébano verde (Magnolia pallescens) y la planta carnívora endémica Pinguicula casabitoana [@cano2016humid; @garcia2002flora; @jardinbotanico2021sabana].
+
+Esta marcada restricción espacial en las cumbres representa la evidencia más contundente del elevado índice de endemismo de la flora de altura de La Española, el cual alcanza el 38% de las especies vasculares de la isla debido a que estos macizos operan biogeográficamente bajo el modelo de "islas dentro de islas" o "islas de cielo" (sky islands), donde el aislamiento topográfico prolongado interrumpió el flujo génico con las poblaciones continentales [@garcia2002flora; @stubbs2020floras]. La preexistencia de barreras oceánicas durante más de 30 millones de años descarta explicaciones vicariantistas tradicionales para el origen de Pinus occidentalis, demostrando que la colonización ocurrió mediante eventos de dispersión transoceánica a larga distancia desde Centroamérica en el Plioceno tardío, seguidos de procesos de especiación alopátrica insular frente a las poblaciones cubanas y una diversificación microevolutiva moldeada por la deriva genética y el aislamiento por distancia [@cano2010biogeography; @farjon2010pinus]. Las extremas oscilaciones térmicas diarias y las heladas del termotipo supratropical actuaron como potentes motores de la selección natural, fijando adaptaciones eco-fisiológicas críticas como la acumulación de azúcares crioprotectores, la pubescencia foliar densa y la esclerofilia en las comunidades herbáceas vasculares, además de una notable resiliencia pirogénica y capacidad de rebrote post-fuego en el pino criollo [@cano2011phytosociological; @jardinbotanico2021sabana]. Esta dinámica evolutiva fue catalizada por las oscilaciones paleoclimáticas del Pleistoceno tardío, donde las glaciaciones locales en Valle Nuevo y el Pico Duarte deprimieron la línea de nieve permanente hasta los 2,200 metros de altitud, desplazando las latifoliadas a cotas inferiores y permitiendo que, tras el retroceso glaciar en el Holoceno, las cumbres quedaran rezagadas como refugios ecológicos aislados que forzaron la radiación adaptativa y la coexistencia de linajes de afinidad andino-continental [@orvis1997geomorphic; @schubert1982glaciacion]. Asimismo, el aislamiento favoreció intrincadas redes de coevolución simbiótica especializada, visibles en la morfología mandibular del ave endémica Loxia megaplaga para extraer semillas de los conos de pino y en el parasitismo restrictivo del muérdago enano Arceuthobium bicarinatum [@cano2011phytosociological; @farjon2010pinus].
+
+A pesar de haber resistido las fluctuaciones del Cuaternario, el estado actual de conservación de este ensamble evolutivo es de una alarmante vulnerabilidad ecológica debido a las presiones antrópicas acumuladas y a las sinergias negativas del cambio climático global. Durante el último siglo, las intensas explotaciones madereras históricas fragmentaron severamente los hábitats, reduciendo la cobertura original de los pinares densos a una fracción mínima de su territorio estimado en la isla y colocando bajo amenaza de extinción a especies arbóreas de alto valor biológico como Magnolia pallescens y Juniperus gracilior, así como a múltiples especies de helechos arborescentes del género Cyathea [@jaragua2012valle; @propagas2020guia]. En la actualidad, el aumento paulatino de las temperaturas y las sequías prolongadas inducen un estrés hídrico crónico que deprime la producción de resina protectora en los pinos, facilitando ataques epidémicos masivos de escarabajos descortezadores de los géneros Ips y del barrenador del pino del sur (Dendroctonus frontalis) [@ncforest2020southern; @soh2024pino]. Estos coleópteros inoculan el hongo fitopatógeno Ophiostoma minus, el cual obstruye mecánicamente los haces vasculares del floema y cambium, anillando al árbol y provocando el secado total de las acículas en una sola temporada de crecimiento, lo que ha provocado una disminución poblacional documentada del 54% del pino criollo en monitoreos recientes [@ncforest2020southern; @soh2024pino]. Esta masiva acumulación de biomasa seca incrementa exponencialmente el riesgo de incendios forestales antrópicos de alta intensidad —los cuales destruyen los brotes vegetativos de plantas resilientes como Pinguicula casabitoana— y altera los regímenes ecológicos naturales, acelerando la degradación de las sabanas de pajón por la invasión agresiva de plantas exóticas introducidas como Taraxacum officinale, que ya representan el 33% de su flora [@carnifans2025pinguicula; @foro2023valle; @jardinbotanico2021sabana]. Para mitigar el desplazamiento competitivo de este ecosistema esencial —puesto que la Cordillera Central es el principal regulador hidrológico que abastece las mayores cuencas de la isla— se requiere urgentemente transicionar hacia políticas de manejo integrado del fuego mediante quemas prescritas, control fitosanitario preventivo y la consolidación de corredores biológicos altitudinales entre parques nacionales como José Armando Bermúdez y Valle Nuevo para permitir la migración adaptativa de la flora ante el calentamiento contemporáneo [@andrade2005gestion; @foro2023valle; @lebron2023diversidad].
+
+# 4. Discusión
+
+
+
+# 6. Conclusiones
+
+
+
+# 7. Referencias Bibliográficas
