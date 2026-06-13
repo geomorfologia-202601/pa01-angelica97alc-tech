@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.30)  12 JUN 2026 03:04
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.30)  13 JUN 2026 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -902,24 +902,34 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 (Font)              scaled to size 4.99947pt on input line 139.
 [1
 
-] [2] [3] [4]
+]
+
+LaTeX Warning: Reference `fig:fig-mapa' on page 2 undefined on input line 160.
+
+[2]
+File: cc.png Graphic file (type bmp)
+<cc.png>
+[3] [4] [5]
 File: plantilla2_files/figure-latex/fig-indices-1.pdf Graphic file (type pdf)
 <use plantilla2_files/figure-latex/fig-indices-1.pdf>
-[5] [6]
+[6]
 File: plantilla2_files/figure-latex/diag-crisis-1.pdf Graphic file (type pdf)
 <use plantilla2_files/figure-latex/diag-crisis-1.pdf>
-[7] [8] [9] [10] (./plantilla2.aux)
+[7] [8] [9] [10] [11] (./plantilla2.aux)
+
+LaTeX Warning: There were undefined references.
+
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 21308 strings out of 476191
- 395189 string characters out of 5812072
- 910766 words of memory out of 5000000
- 41747 multiletter control sequences out of 15000+600000
+ 21331 strings out of 476191
+ 395416 string characters out of 5812072
+ 917908 words of memory out of 5000000
+ 41766 multiletter control sequences out of 15000+600000
  475670 words of font info for 76 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  86i,7n,121p,2435b,455s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on plantilla2.pdf (10 pages).
+Output written on plantilla2.pdf (11 pages).
