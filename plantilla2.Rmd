@@ -100,6 +100,67 @@ La caracterización botánica de la alta montaña en la Cordillera Central de La
 
 En este relieve escarpado y activo, el pino criollo o pino de cuaba (Pinus occidentalis) opera como el elemento de ingeniería ecosistémica dominante y estructurador fundamental del paisaje forestal. Taxonómicamente, esta conífera endémica se sitúa filogenéticamente de manera cercana con Pinus cubensis (especie del oriente de Cuba), compartiendo características morfológicas singulares en sus conos y acículas, aunque se define ecológicamente como un especialista edáfico capaz de colonizar los suelos silíceos, marcadamente ácidos, poco profundos y deficientes en nutrientes de las mayores altitudes caribeñas [@cano2011phytosociological; @farjon2010pinus]. Su distribución geográfica está rigurosamente condicionada por un gradiente bioclimático y altitudinal por encima de los 2,000 metros de altitud en el Área Biogeográfica Centro-Oriental o Área A16 [@cano2017catena]. En estas cumbres supratropicales, la exclusión de la mayoría de las latifoliadas permite que el dosel sea dominado únicamente por el pino, abriendo paso en las depresiones intermontanas inundables a las sabanas de pajón —dominadas por las gramíneas Danthonia domingensis y Deschampsia domingensis junto a musgos del género Sphagnum—, mientras que en las laderas húmedas de barlovento, adscritas a alianzas como Rondeletio ochraceae-Didymopanion tremuli, se asienta el bosque nublado donde coexisten el ébano verde (Magnolia pallescens) y la planta carnívora endémica Pinguicula casabitoana [@cano2016humid; @garcia2002flora; @jardinbotanico2021sabana].
 
+(ref:tab-caption) **Cuadro Comparativo de Adaptaciones Evolutivas en la Alta Montaña de la Cordillera Central.** Resumen de estrategias eco-fisiológicas y fundamentos evolutivos en gimnospermas y angiospermas seleccionadas.
+
+```{r cuadro-adaptaciones, echo=FALSE}
+# Asegúrate de tener instalado el paquete kableExtra si no lo tienes cargado
+# install.packages("kableExtra")
+library(knitr)
+library(kableExtra)
+
+# Creación de la matriz de datos basada en tu documento adjunto
+tabla_datos <- data.frame(
+# Reemplaza la definición de la columna 'Especie' exactamente por esta:
+Especie_format <- c(
+  "\\textbf{Pinus occidentalis}\n\\textit{(Pino criollo)}\nGimnosperma\nPinaceae",
+  "\\textbf{Juniperus gracilior}\n\\textit{(Sabina)}\nGimnosperma\nCupressaceae",
+  "\\textbf{Lyonia spp.}\nAngiosperma\nEricaceae",
+  "\\textbf{Ilex tuerckheimii}\nAngiosperma\nAquifoliaceae",
+  "\\textbf{Weinmannia pinnata}\nAngiosperma\nCunoniaceae"
+),
+  Termico = c(
+    "Inversión metabólica en resinas densas que actúan como aislante térmico ante la congelación (Jardín Botánico, 2026).",
+    "Follaje escuamiforme denso que reduce la superficie expuesta al frío. Presenta neotenia (follaje juvenil) ante el frío (The Gymnosperm Database, 2026).",
+    "Hábito de crecimiento achaparrado (matorral bajo) para retener el calor metabólico cerca del suelo frente a vientos alpinos.",
+    "Consistencia esclerófila que evita el colapso celular por congelación. Su límite altitudinal está fijado por la barrera térmica ($Itc=187$).",
+    "Tolerancia bioquímica y metabólica al congelamiento invernal, integrada a la dinámica de la catena vegetal alpina."
+  ),
+  Hidrico = c(
+    "Hojas aciculares con una gruesa cutícula cerosa y resinas antitranspiratorias frente a vientos secos de altura.",
+    "Las escamas compactas y cutículas gruesas frenan la pérdida hídrica por viento y capturan humedad de la niebla.",
+    "Esclerofilia y microfilia (hojas duras y pequeñas) para tolerar la sequía fisiológica inducida por el frío. Tricomas que reflejan la radiación UV.",
+    "Hojas coriáceas pequeñas con márgenes espinosos que optimizan la reflectancia solar y disipan el exceso de energía térmica y UV.",
+    "Hojas compuestas e imparipinnadas con folíolos reducidos (microfilia), cutícula engrosada y estomas hundidos para mitigar la alta radiación."
+  ),
+  Evolutivo = c(
+    "Linaje boreal. Dispersión transoceánica en el Plioceno tardío; diferenciación por deriva génica y adaptación pirófita a suelos ácidos (Farjon, 2010).",
+    "Especie en \"Isla de Cielo\". Ancestros llegaron en el Pleistoceno vía aves. El retroceso glaciar del Holoceno aisló las poblaciones, induciendo especiación alopátrica (Adams, 2014).",
+    "Radiación evolutiva insular. Alto endemismo antillano; presenta convergencia ecomorfológica foliar con las gimnospermas locales (Stubbs et al., 2020).",
+    "Persistencia en nodos basales. Linaje leñoso relicto de hábitats estables húmedos (bosques nublados) que converge en rasgos defensivos alpinos (García et al., 2002).",
+    "Especie sucesional neotropical. Componente clave en bordes de bosque nublado y laderas perturbadas; tolera suelos lixiviados hiperhúmedos (Bradford et al., 2004)."
+  )
+)
+
+# Renderizado de la tabla con formato profesional para LaTeX/PDF
+kbl(tabla_datos, 
+    format = "latex",
+    booktabs = TRUE,
+    longtable = TRUE, # Permite que la tabla continúe en la siguiente página si es necesario
+    escape = FALSE,   # Permite interpretar formatos como bold, itálicas y expresiones matemáticas
+    col.names = c("Especie, Linaje y Familia", 
+                  "Adaptación al Estrés Térmico (Heladas)", 
+                  "Adaptación al Estrés Hídrico / Radiación UV", 
+                  "Estrategia Evolutiva Fundamentada"),
+    caption = "(ref:tab-caption)") %>%
+  kable_styling(latex_options = c("striped", "repeat_header", "hold_position"),
+                position = "center",
+                font_size = 9) %>% # Tamaño de fuente optimizado para tablas densas
+  column_spec(1, width = "3cm") %>%
+  column_spec(2, width = "4.5cm") %>%
+  column_spec(3, width = "4.5cm") %>%
+  column_spec(4, width = "4.5cm")
+```
+
 Esta marcada restricción espacial representa la evidencia más contundente del elevado índice de endemismo de la flora de altura de La Española, el cual alcanza el 38% de las especies vasculares de la isla debido a que estos macizos operan biogeográficamente bajo el modelo de "islas de cielo" (sky islands) en mutación constante, donde el aislamiento topográfico prolongado interrumpió el flujo génico con las poblaciones continentales [@garcia2002flora; @stubbs2020floras]. La preexistencia de barreras oceánicas durante más de 30 millones de años descarta explicaciones vicariantistas tradicionales para el origen de Pinus occidentalis, demostrando que la colonización ocurrió mediante eventos de dispersión transoceánica a larga distancia desde Centroamérica en el Plioceno tardío, seguidos de procesos de diferenciación microevolutiva moldeados por la deriva genética y el aislamiento por distancia [@cano2010biogeography; @farjon2010pinus]. Esta dinámica evolutiva fue catalizada por las oscilaciones paleoclimáticas del Pleistoceno tardío, donde las glaciaciones locales en Valle Nuevo y el Pico Duarte deprimieron la línea de nieve permanente hasta los 2,200 metros de altitud, desplazando las latifoliadas a cotas inferiores y permitiendo que, tras el retroceso glaciar en el Holoceno, las cumbres quedaran rezagadas como refugios ecológicos aislados que forzaron la radiación adaptativa, la especiación alopátrica y el desarrollo de intrincadas redes de coevolución simbiótica especializada, visibles en la morfología de la especie Loxia megaplaga y el parasitismo del muérdago enano Arceuthobium bicarinatum [@orvis1997geomorphic; @schubert1982glaciacion].
 
 Para comprender cómo opera el tamiz de la selección natural en estas elevaciones, es imprescindible analizar cuantitativamente los índices bioclimáticos de las estaciones de montaña que determinan formalmente las adaptaciones eco-fisiológicas de la biota. Por un lado, el índice ombrotérmico hiperhúmedo ($Io = 19.7$) confirma una disponibilidad hídrica masiva por lluvias orográficas y neblinas persistentes en barlovento que satura los suelos y acelera la lixiviación de nutrientes, induciendo un escenario edáfico oligotrófico donde Pinguicula casabitoana logra su ventaja evolutiva al compensar la carencia de nitrógeno y fósforo mediante la captura de insectos [@cano2017catena; @jardinbotanico2021sabana]. Por otro lado, el índice de termicidad supratropical ($Itc = 187$) define el límite térmico donde la energía calórica es insuficiente para el desarrollo de las latifoliadas tropicales, traduciéndose en drásticas oscilaciones térmicas diarias y heladas invernales recurrentes; para sobrevivir a esto, la selección natural fijó caracteres críticos en las comunidades de la Sabana de Pajón, tales como la acumulación de azúcares crioprotectores en sus vacuolas para descender el punto de congelación citoplasmático, pubescencia foliar densa y una esclerofilia extrema, condiciones que en el pino criollo limitan su crecimiento pero favorecen una alta inversión metabólica en resinas densas que actúan como aislante térmico y defensa antitranspiratoria [@cano2011phytosociological; @jaragua2012valle].
