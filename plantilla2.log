@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.30)  18 JUN 2026 00:22
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2022/dev/Debian) (preloaded format=xelatex 2026.1.30)  20 JUN 2026 15:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -569,6 +569,9 @@ File: bkm-dvipdfm.def 2020-11-06 v1.29 bookmark driver for dvipdfm (HO)
 Package: xurl 2022/01/09 v 0.10 modify URL breaks
 ) (./plantilla2.aux
 
+LaTeX Warning: Label `tab:cuadro-adaptaciones' multiply defined.
+
+
 LaTeX Warning: Label `fig:fig-indices' multiply defined.
 
 )
@@ -1040,11 +1043,11 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  22767 strings out of 476191
- 419677 string characters out of 5812072
- 943416 words of memory out of 5000000
+ 419668 string characters out of 5812072
+ 944416 words of memory out of 5000000
  43143 multiletter control sequences out of 15000+600000
  476753 words of font info for 85 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 86i,10n,121p,2436b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,10n,121p,2449b,518s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on plantilla2.pdf (12 pages).
